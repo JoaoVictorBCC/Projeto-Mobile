@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- colors.xml — Paleta Vitrine Fashion -->
+<resources>
+    <!-- Cores principais -->
+    <color name="accent_pink">#E91E8C</color>
+    <color name="accent_pink_light">#FFD6EC</color>
+    <color name="accent_dark">#1A1A2E</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_primary">#FAFAFA</color>
+    <color name="card_bg">#FFFFFF</color>
+
+    <!-- Textos -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- UI Elements -->
+    <color name="divider">#F0F0F0</color>
+    <color name="stroke_light">#E0E0E0</color>
+    <color name="chip_selected_bg">#FFD6EC</color>
+    <color name="stock_green">#4CAF50</color>
+    <color name="stock_orange">#FF9800</color>
+</resources>
