@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    ==================
+    Layout raiz do ponto de entrada do aplicativo Vitrine Fashion.
+
+    Papel desta Activity no fluxo:
+      MainActivity (launcher) → decide para onde navegar:
+        • Usuário sem cadastro  → SplashActivity  (btnEnter / btnRegister)
+        • Usuário já cadastrado → CatalogActivity (direto, via SharedPreferences local)
+
+    Por isso o layout é intencionalmente simples: apenas uma SplashView
+    fullscreen com o logotipo animado enquanto a MainActivity verifica o
+    estado local do usuário e faz o redirecionamento.  Toda a UI de
+    boas-vindas real fica em activity_splash.xml.
+
+    Restrições respeitadas:
+      • Funciona 100 % offline (RN01) — nenhuma chamada de rede aqui.
+      • Sem tela de login (RN03 / Exclusões do Escopo).
+      • Código organizado e comentado para facilitar manutenção (Restrições do TAP).
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!--
+        Logo centralizado exibido durante a verificação do estado local.
+        A MainActivity dispara um Handler de ~800 ms e então chama
+        startActivity() para o destino correto antes de chamar finish().
+    -->
+    <ImageView
+        android:id="@+id/imgSplashLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/ic_vitrine_logo"
+        android:contentDescription="@string/logo_desc"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/tvSplashBrand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Nome da marca -->
+    <TextView
+        android:id="@+id/tvSplashBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/playfair_display"
+        app:layout_constraintBottom_toTopOf="@+id/tvSplashTagline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgSplashLogo" />
+
+    <!-- Tagline -->
+    <TextView
+        android:id="@+id/tvSplashTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tagline"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplashBrand" />
+
+    <!--
+        ProgressBar discreta no rodapé: indica que a verificação local
+        está em andamento. Oculta assim que a navegação é disparada.
+    -->
+    <ProgressBar
+        android:id="@+id/progressMain"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:indeterminate="true"
+        android:progressTint="@color/accent_pink"
+        android:indeterminateTint="@color/accent_pink"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
