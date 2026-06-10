@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cor de destaque principal — rosa Vitrine Fashion -->
+    <color name="accent_pink">#E91E8C</color>
+    <color name="accent_pink_light">#FFD6EC</color>
+
+    <!-- Backgrounds -->
+    <color name="bg_primary">#FAFAFA</color>
+    <color name="card_bg">#FFFFFF</color>
+
+    <!-- Textos -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#757575</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- UI Elements -->
+    <color name="divider">#F0F0F0</color>
+    <color name="stroke_light">#E0E0E0</color>
+    <color name="chip_selected_bg">#FFD6EC</color>
+    <color name="stock_green">#4CAF50</color>
+    <color name="stock_orange">#FF9800</color>
+
+    <!-- Cores padrão exigidas pelo tema do Android Studio (não remover) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+</resources>
